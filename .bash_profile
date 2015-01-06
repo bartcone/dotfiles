@@ -9,7 +9,7 @@ recursiveSearch() {
 }
 
 # opens your current directory from terminal in finder 
-alias odir='open `pwd`'
+alias odir='open .'
 alias gs='git status'
 # search recursively from current directory for file
 alias f=recursiveSearch
