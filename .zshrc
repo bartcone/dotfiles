@@ -1,7 +1,25 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/bartcone/.oh-my-zsh
 
+recursiveSearch() {
+	find ./ -name $1 2>/dev/null
+}
+
+# delete derived data
 alias ddd='rm -rf ~/Library/Developer/Xcode/DerivedData'
+alias sdk='cd "$(xcp)"/Platforms'
+
+# clone all branches - useful for moving repositories
+alias ca='for remote in `git branch -r | grep -v master `; do git checkout --track $remote ; done'
+
+# simulator directory
+alias sim='cd ~/Library/Developer/CoreSimulator'
+
+# list simulators - useforl for getting the UUID and searching for apps inside the simlators
+alias sim-list='xcrun simctl list'
+
+# search for a given file recusrively from current directory
+alias f=recursiveSearch
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
